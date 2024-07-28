@@ -1,0 +1,4 @@
+-- Notedly
+  - Users will be able to create an account
+  - Write notes in plain text or markdown
+  
