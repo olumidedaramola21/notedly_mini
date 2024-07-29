@@ -1,0 +1,5 @@
+Javascript Everywhere Book
+  - Building Cross-Platform Application with GraphQL, React, React Native, and Electron
+The need for GraphQL
+  - These types of interconnected data are exactly the challenge that GraphQL initially set out to solve in API development. By writing a GraphQL API we are able to efficiently connect data, which reduces the complexity and number of request while allowing us to serve a client precisely the data they need.
+  - The tools and techniques provided by GraphQL Javascript ecosystem both enable and simplify all types of  API development.
