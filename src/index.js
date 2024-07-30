@@ -1,6 +1,34 @@
-const express = require('express')
-const app = express()
-// const port = process.env.PORT || 4000
+const express = require("express");
+const { ApolloServer, gql } = require("apollo-server-express");
+require('dotenv').config()
 
-app.get("/", (req, res) => res.send("My name is Big Olu!"))
-app.listen(4000, () => console.log("Listening on port 4000"))
+const port = process.env.PORT || 4000;
+
+// define the schema
+const typeDefs = gql`
+  type Query {
+    hello: String
+  }
+`;
+// define the resolvers
+const resolvers = {
+  Query: {
+    hello: () => 'Hello world!'
+  } 
+} 
+
+const app = express();
+// apollo-server instance
+const server = new ApolloServer({typeDefs, resolvers})
+// apply the apollo graphql middleware and set the path to /api
+const startServer =async () => {
+  await server.start()
+  server.applyMiddleware({app, path: '/api'});
+}
+
+app.get('/', (req, res) => res.send('Big Olu'))
+app.listen(port, () => console.log("Listening on port 4000"));
+
+startServer().catch(error => {
+console.log(error)
+})
