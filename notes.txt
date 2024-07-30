@@ -3,3 +3,10 @@ Javascript Everywhere Book
 The need for GraphQL
   - These types of interconnected data are exactly the challenge that GraphQL initially set out to solve in API development. By writing a GraphQL API we are able to efficiently connect data, which reduces the complexity and number of request while allowing us to serve a client precisely the data they need.
   - The tools and techniques provided by GraphQL Javascript ecosystem both enable and simplify all types of  API development.
+  - Write a GraphQL schema, develop code to resolve our schema functions, and access our API using the GraphQL Playground user interface.
+  - Using the apollo-server-express package, Apollo server  is an open source GraphQL library, I enables use to serve data as a GraphQL API from a Node.js Application and also provide helpful tooling such as GraphQL Playground, a visual helper for  working with our API in development.
+  - GraphQL application consists of two primary components: a schema of type definitions.
+                                                            resolvers: which resolve the queries and the mutations performed against data.
+                                            
+
+  - Apollo GraphQL middeleware functions refer to middeleware functions that integrate apollo server with web frameworks such as Express. middeleware in context allows us to extend the functionality of the server by adding custom logic to handle requests and responses. when using apollo server with a web framework, the middeleware function connects apollo server to the framework, allowing you to use the other middeleware(e.g authetication, logging, error handling) alongside your GraphQL server.                               
