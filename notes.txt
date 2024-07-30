@@ -11,3 +11,9 @@ The need for GraphQL
 
   - Apollo GraphQL middeleware functions refer to middeleware functions that integrate apollo server with web frameworks such as Express. middeleware in context allows us to extend the functionality of the server by adding custom logic to handle requests and responses. when using apollo server with a web framework, the middeleware function connects apollo server to the framework, allowing you to use the other middeleware(e.g authetication, logging, error handling) alongside your GraphQL server.
                             
+  - schema is written representation of our data and interactions. By requiring a schema, GraphQL enforces a strict plan for our API. This is because our API can return data and perform interactions that are defined within our schema.
+  - The fundamental components of GraphQL are object types
+
+  - Resolvers are the second piece of our GraphQL API. they resolve the data that the user requested for. we write these resolvers by first defining them in our schema and then re-implementing the logic withing our Javascript code. Our API will contain two types of resolvers: queries and mutuations
+  - Quries: A query requests specific data from an API, in its desired format. In our hypothetical pizza API we may write a query that will return an object, containing the data that the API user has requested. A query never modifies the data, only accesses it.
+  - Mutations: we use a mutuation when we want to modify data in our API. In our pizza example, we may write a mutation that changes the toppings of a given pizza and another that will allow us adjust the number of slices. similiar to a query, a muatuation is also expected to return a result in form of object, typically the end result of the performed action.
