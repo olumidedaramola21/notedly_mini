@@ -9,4 +9,5 @@ The need for GraphQL
                                                             resolvers: which resolve the queries and the mutations performed against data.
                                             
 
-  - Apollo GraphQL middeleware functions refer to middeleware functions that integrate apollo server with web frameworks such as Express. middeleware in context allows us to extend the functionality of the server by adding custom logic to handle requests and responses. when using apollo server with a web framework, the middeleware function connects apollo server to the framework, allowing you to use the other middeleware(e.g authetication, logging, error handling) alongside your GraphQL server.                               
+  - Apollo GraphQL middeleware functions refer to middeleware functions that integrate apollo server with web frameworks such as Express. middeleware in context allows us to extend the functionality of the server by adding custom logic to handle requests and responses. when using apollo server with a web framework, the middeleware function connects apollo server to the framework, allowing you to use the other middeleware(e.g authetication, logging, error handling) alongside your GraphQL server.
+                            
