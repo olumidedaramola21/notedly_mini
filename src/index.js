@@ -19,6 +19,10 @@ const typeDefs = gql`
     note(id: ID): Note! 
   },
 
+  type Mutation {
+    newNote(content: String!): Note!
+  }
+
   type Pizza {
   id: ID!
   size: String!
@@ -42,6 +46,18 @@ const resolvers = {
       return notes.find(note => note.id === args.id)
     }
   },
+
+  Mutation: {
+    newNote: (parent, args) => {
+      let noteValue = {
+        id: String(notes.length + 1),
+        content: args.content,
+        author: 'Adam Scott'
+      };
+      notes.push(noteValue)
+      return noteValue;
+    }
+  }
 };
 
 const app = express();
@@ -53,7 +69,7 @@ const startServer = async () => {
   server.applyMiddleware({ app, path: "/api" });
 };
 
-app.listen(port, () => console.log("Listening on port 4000"));
+app.listen(port, () => console.log(`GraphQL Server running at http://${port}${server.graphqlPath}`));
 
 startServer().catch((error) => {
   console.log(error);
