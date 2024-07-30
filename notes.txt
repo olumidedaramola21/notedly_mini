@@ -4,7 +4,7 @@ The need for GraphQL
   - These types of interconnected data are exactly the challenge that GraphQL initially set out to solve in API development. By writing a GraphQL API we are able to efficiently connect data, which reduces the complexity and number of request while allowing us to serve a client precisely the data they need.
   - The tools and techniques provided by GraphQL Javascript ecosystem both enable and simplify all types of  API development.
   - Write a GraphQL schema, develop code to resolve our schema functions, and access our API using the GraphQL Playground user interface.
-  - Using the apollo-server-express package, Apollo server  is an open source GraphQL library, I enables use to serve data as a GraphQL API from a Node.js Application and also provide helpful tooling such as GraphQL Playground, a visual helper for  working with our API in development.
+  - Using the apollo-server-express package, Apollo server  is an open source GraphQL library, It enables us to serve data as a GraphQL API from a Node.js Application and also provide helpful tooling such as GraphQL Playground, a visual helper for  working with our API in development.
   - GraphQL application consists of two primary components: a schema of type definitions.
                                                             resolvers: which resolve the queries and the mutations performed against data.
                                             
@@ -14,6 +14,16 @@ The need for GraphQL
   - schema is written representation of our data and interactions. By requiring a schema, GraphQL enforces a strict plan for our API. This is because our API can return data and perform interactions that are defined within our schema.
   - The fundamental components of GraphQL are object types
 
-  - Resolvers are the second piece of our GraphQL API. they resolve the data that the user requested for. we write these resolvers by first defining them in our schema and then re-implementing the logic withing our Javascript code. Our API will contain two types of resolvers: queries and mutuations
+  - Resolvers are the second piece of our GraphQL API. they resolve the data that the user requested for. Functions that return the appropriate data when the queries sre executed. Our API will contain two types of resolvers: queries and mutuations
   - Quries: A query requests specific data from an API, in its desired format. In our hypothetical pizza API we may write a query that will return an object, containing the data that the API user has requested. A query never modifies the data, only accesses it.
-  - Mutations: we use a mutuation when we want to modify data in our API. In our pizza example, we may write a mutation that changes the toppings of a given pizza and another that will allow us adjust the number of slices. similiar to a query, a muatuation is also expected to return a result in form of object, typically the end result of the performed action.
+  - Mutations: we use a mutuation when we want to modify data in our API. In our pizza example, we may write a mutation that changes the toppings of a given pizza and another that will !allow us adjust the number of slices. similiar to a query, a muatuation is also expected to return a result in form of object, typically the end result of the performed action.
+
+  - When we request for data and a field is omitted in the query, only the requested field is sent to the client.
+ - For user queries with arguments, we will need to be able to read the API user's arguments values. Helpfully, Apollo server passes the following useful parameters to our resolver functions:
+  parent:
+        The result of the parent query, which is useful when nesting queries
+  args:
+        These are the arguments passed by the user in the query
+  context:
+        Information passed along from the server application to the resolver  functions. This could include things such as the curent user or database information.
+  infor: Information about the query itself
