@@ -26,7 +26,7 @@ const startServer =async () => {
   server.applyMiddleware({app, path: '/api'});
 }
 
-app.get('/', (req, res) => res.send('Big Olu'))
+
 app.listen(port, () => console.log("Listening on port 4000"));
 
 startServer().catch(error => {
