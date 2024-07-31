@@ -18,6 +18,7 @@
     "express": "^4.19.2",
     "faker": "^6.6.6",
     "globals": "^15.8.0",
+    "mongodb": "6.8",
     "node-fetch": "^3.3.2",
     "nodemon": "^3.1.4",
     "prettier": "^3.3.3"
